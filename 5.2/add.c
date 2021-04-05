@@ -11,7 +11,7 @@ int digit(char c) {
 double numb(char c) {
     int k, fl = 0, i = 0;
     char count[100] = {'0'};
-    double huy = 0;
+    double h = 0;
     while (c != ' ' && c != '\n') {
         if (digit(c) || c == '.')
             count[i] = c;
@@ -25,12 +25,12 @@ double numb(char c) {
             fl = 1;
         }
         if (fl == 0)
-            huy = huy * 10.0 +(count[j] - '0');
-        else huy = huy + (count[j] - '0') * pow(0.1, j - k);
+            h = h * 10.0 +(count[j] - '0');
+        else h = h + (count[j] - '0') * pow(0.1, j - k);
     }
     if (fl == 1)
-        huy = huy+2;
-    return huy;
+        h = h+2;
+    return h;
 }
 
 void compare(double result) {
